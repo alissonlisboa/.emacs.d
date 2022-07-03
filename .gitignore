@@ -8,4 +8,4 @@ elpa/
 .mc-lists.el
 *~
 *#
-/session.
+/session.*
