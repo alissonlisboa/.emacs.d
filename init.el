@@ -7,7 +7,7 @@
 (global-display-line-numbers-mode 1)
 (column-number-mode 1)
 (setq inhibit-startup-screen t)
-(setq truncate-lines t)
+;; (setq truncate-lines t)
 (global-hl-line-mode 1)
 (set-fringe-mode 0)
 
@@ -17,7 +17,7 @@
 (electric-pair-mode 1)         ; autopair
 (global-unset-key (kbd "C-z")) ; disable Ctrl-z (suspend frame)
 (delete-selection-mode t)      ; typing replace region selected
-(global-visual-line-mode t)	       ; don't brake words at the end of screen
+;; (global-visual-line-mode t)	       ; don't brake words at the end of screen
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)) ; 1 line at a time
       mouse-wheel-progressive-speed t		   ; disable scroll aceleration
       mouse-wheel-follow-mouse 't		   ; bring the cursor together
@@ -82,10 +82,12 @@
   (package-install 'multiple-cursors))
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C-S-n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-S-p") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this-symbol)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this-symbol)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-.") 'mc/unmark-next-like-this)
+(global-set-key (kbd "C-,") 'mc/unmark-previous-like-this)
+(global-set-key (kbd "C-S-n") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-S-p") 'mc/skip-to-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim)
 
 
