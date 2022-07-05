@@ -24,9 +24,17 @@
       scroll-step 1)				   ; keyboard scroll step
 
 
-;; Backups
+;; Backups/Lockfiles
 ;; =======
-;; (setq backup-directory-alist '("." . "~/.backups-emacs"))
+(setq create-lockfiles nil
+      make-backup-files nil
+      ;; But in case the user does enable it, some sensible defaults:
+      version-control t			; number each backup file
+      backup-by-copying t		; instead of renaming current file (clobbers links)
+      delete-old-versions t		; clean up after itself
+      kept-old-versions 5
+      kept-new-versions 5
+      backup-directory-alist (list (cons "." (concat user-emacs-directory "backup/"))))
 
 ;; Package Managers
 ;; ================
